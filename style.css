@@ -8,10 +8,11 @@ body {
   font-family: sans-serif;
   color: #717171;
   border-top: 10px solid #1098ad;
+  position: relative;
 }
 
 .container {
-  width: 1000px;
+  width: 1200px;
   margin: auto auto;
 }
 
@@ -20,7 +21,7 @@ body {
   /*Short-hand property for padding */
   padding: 20px 40px;
   margin-bottom: 60px;
-  height: 80px;
+  height: 60px;
 }
 
 .post-header {
@@ -32,7 +33,7 @@ article {
 }
 
 nav {
-  font-size: 20px;
+  font-size: 25px;
   margin-left: 10px;
 }
 
@@ -88,11 +89,11 @@ ol {
 
 li {
   font-size: 20px;
-  margin-bottom: 10px;
 }
 
 li:last-child {
   margin-bottom: 0;
+  font-style: italic;
 }
 
 #author {
@@ -117,19 +118,6 @@ article ul li:nth-child(-n + 1),
 article ol li:nth-child(-n + 1) {
   font-weight: bold;
 }
-
-li:last-child {
-  font-style: italic;
-}
-
-/*Choosing the position of the child,
-We can use numbers or odd/even keywords*/
-
-/* Misconception: This won't work because the first child is a heading, 
-not a paragraph.
-article p:first-child {
-  color: red;
-}*/
 
 /*Styling links*/
 a:link {
@@ -157,21 +145,98 @@ a:active {
   height: auto;
 }
 
-/*Resolving conflicts*/
-/*
-#copyright {
-  color: #ff0000;
-}
+.heart-button {
+  background-color: #afd0d5;
+  color: white;
 
-.copyright {
-  color: blue;
-}
+  padding: 20px;
+  font-size: 16px;
+  cursor: pointer;
 
-.text {
-  color: yellow;
-}
-
-footer p {
-  color: green;
-}
+  position: absolute;
+  /*top: 50px;
+  left: 100px;
   */
+  bottom: 50px;
+  right: 50px;
+}
+
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/*h2::first-letter {
+  font-size: 100px;
+}*/
+
+/*Adjacent sibling selector*/
+/*h3 + p::first-line {
+  font-weight: bold;
+  color: red;
+}*/
+
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "TOP";
+  font-size: 16px;
+  background-color: yellow;
+  color: black;
+  border: solid 1px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/*  nav a:link {
+  background-color: red;
+  margin: 20px;
+
+  /*Changing inline to block-level element*/
+/*display: block;*/
+
+/*FLOATS*/
+.laura-img {
+  float: left;
+  margin-bottom: 20px;
+}
+
+.author {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+  word-spacing: 20px;
+  padding-top: 25px;
+}
+
+.clear {
+  clear: both;
+}
+
+article {
+  width: 800px;
+  float: left;
+}
+
+aside {
+  width: 350px;
+  float: right;
+}
+
+footer {
+  clear: both;
+}
